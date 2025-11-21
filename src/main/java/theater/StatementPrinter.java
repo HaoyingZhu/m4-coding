@@ -21,25 +21,40 @@ public class StatementPrinter {
 
     @SuppressWarnings({"checkstyle:MissingJavadocMethod", "checkstyle:SuppressWarnings"})
     public String statement() {
-        int totalAmount = 0;
-        int volumeCredits = 0;
         final StringBuilder result = new StringBuilder()
                 .append("Statement for ")
                 .append(getInvoice().getCustomer())
                 .append(System.lineSeparator());
 
-        for (Performance p : getInvoice().getPerformances()) {
-            volumeCredits += getVolumeCredits(p);
+        final int totalAmount = getTotalAmount();
 
+        final int volumeCredits = getVolumeCredits();
+
+        for (Performance p : getInvoice().getPerformances()) {
             result.append(String.format("  %s: %s (%s seats)%n",
                     getPlay(p).getName(),
                     usd(getAmount(p)),
                     p.getAudience()));
-            totalAmount += getAmount(p);
         }
         result.append(String.format("Amount owed is %s%n", usd(totalAmount)));
         result.append(String.format("You earned %s credits%n", volumeCredits));
         return result.toString();
+    }
+
+    private int getTotalAmount() {
+        int totalAmount = 0;
+        for (Performance p : getInvoice().getPerformances()) {
+            totalAmount += getAmount(p);
+        }
+        return totalAmount;
+    }
+
+    private int getVolumeCredits() {
+        int volumeCredits = 0;
+        for (Performance p : getInvoice().getPerformances()) {
+            volumeCredits += getVolumeCredits(p);
+        }
+        return volumeCredits;
     }
 
     private int getVolumeCredits(Performance performance) {
