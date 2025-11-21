@@ -28,7 +28,7 @@ public class StatementPrinter {
 
         final int totalAmount = getTotalAmount();
 
-        final int volumeCredits = getVolumeCredits();
+        final int volumeCredits = getTotalVolumeCredits();
 
         for (Performance p : getInvoice().getPerformances()) {
             result.append(String.format("  %s: %s (%s seats)%n",
@@ -49,7 +49,7 @@ public class StatementPrinter {
         return totalAmount;
     }
 
-    private int getVolumeCredits() {
+    private int getTotalVolumeCredits() {
         int volumeCredits = 0;
         for (Performance p : getInvoice().getPerformances()) {
             volumeCredits += getVolumeCredits(p);
