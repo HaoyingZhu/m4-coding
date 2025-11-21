@@ -178,7 +178,7 @@ Hover — don't click — and a popup will appear mentioning what the problem is
 
 > The project stores information about CheckStyle in `.idea/checkstyle-idea.xml`.
 
-- [ ] **For each Java source file in `src/main/java/`, fix all CheckStyle issues that are detected.**
+- [X] **For each Java source file in `src/main/java/`, fix all CheckStyle issues that are detected.**
   You should either see the CheckStyle Tool Window icon (it looks like a pencil) on the left of IntelliJ or
   you may need to go to `View -> Tool Windows -> CheckStyle` to open the CheckStyle Tool Window.
   The following provides more about this step.
@@ -215,7 +215,7 @@ Hover — don't click — and a popup will appear mentioning what the problem is
 
 ### **Important: Add, commit, and push your changes.**
 
-- [ ] When you are done, commit your work with **a commit message that includes the string `Task 1.1`**.
+- [X] When you are done, commit your work with **a commit message that includes the string `Task 1.1`**.
 
 > **Very Important:** we'll be looking for the string `Task 1.1` in your git log of commit messages in the MarkUs autotests!
 
@@ -231,7 +231,7 @@ As highlighted already, the emphasis in this assignment is on the process of per
 refactoring. To document this process, you will also maintain a record of your git log in your
 repository.
 
-- [ ] Run the command `git log --oneline` in the terminal and copy+paste the output into
+- [X] Run the command `git log --oneline` in the terminal and copy+paste the output into
   the `log.txt` file to replace all of its contents.
   - Alternatively, make sure your terminal is open in your project directory,
     and you can run `git log --oneline > log.txt` to replace the contents of the `log.txt` file
